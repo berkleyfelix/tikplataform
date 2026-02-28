@@ -7,6 +7,7 @@
   <meta name="robots" content="index, follow" />
   <title>TikPlatform - Descargar Videos de TikTok Sin Marca de Agua</title>
 
+  <!-- Canonical + hreflang (cuando uses dominio real) -->
   <link rel="canonical" href="https://tikplatform.com/" />
   <link rel="alternate" hreflang="es" href="https://tikplatform.com/?lang=es" />
   <link rel="alternate" hreflang="en" href="https://tikplatform.com/?lang=en" />
@@ -18,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/site.css">
 
-  <!-- AdSense (ponlo SOLO cuando el sitio esté aprobado; evita anuncios en páginas finas) -->
+  <!-- AdSense: actívalo SOLO cuando el sitio esté aprobado -->
   <!--
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=TU_CLIENT"
     crossorigin="anonymous"></script>
@@ -36,6 +37,44 @@
     ]
   }
   </script>
+
+  <style>
+    /* Si tu site.css ya tiene esto, puedes borrarlo */
+    .ad-slot {
+      background-color: #f3f4f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9ca3af;
+      border: 2px dashed #e5e7eb;
+      margin: 2rem auto;
+      text-align: center;
+      overflow: hidden;
+      min-height: 90px;
+    }
+
+    .social-btn {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      transition: all .3s ease;
+    }
+    .social-btn:hover { transform: translateY(-3px); }
+
+    .loader {
+      border: 3px solid rgba(255,255,255,0.3);
+      border-top: 3px solid #ffffff;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      animation: spin 1s linear infinite;
+      display: inline-block;
+    }
+    @keyframes spin { 0% { transform: rotate(0deg);} 100% { transform: rotate(360deg);} }
+  </style>
 </head>
 
 <body class="bg-slate-50 text-slate-800 font-sans flex flex-col min-h-screen">
@@ -108,7 +147,6 @@
 
         <div id="statusMsg" class="mt-4 font-medium hidden text-center"></div>
 
-        <!-- ✅ Anuncio SOLO si esta página tiene mucho contenido (que sí lo tiene) -->
         <div class="ad-slot w-full md:w-[728px] h-[90px] rounded-lg">
           <span class="text-xs">Espacio publicitario (AdSense)</span>
         </div>
@@ -150,7 +188,6 @@
       </div>
     </section>
 
-    <!-- CONTENIDO EDITORIAL EXTENSO (clave para AdSense) -->
     <section class="max-w-5xl mx-auto px-4 py-12">
       <article class="prose prose-slate max-w-none text-gray-700">
         <div id="como-funciona" class="text-center mb-10">
@@ -256,7 +293,16 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
+  <!-- i18n -->
   <script src="assets/js/i18n.js"></script>
+
+  <!-- ✅ CONFIG: URL de tu Worker (proxy) -->
+  <script>
+    window.TIK_WORKER_URL = "https://tik.berkeleyfelix1.workers.dev";
+  </script>
+
+  <!-- main -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>
