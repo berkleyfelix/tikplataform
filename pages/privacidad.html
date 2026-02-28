@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Política de Privacidad | TikPlatform</title>
+  <meta name="description" content="Política de privacidad de TikPlatform: datos, cookies, publicidad, seguridad y derechos del usuario.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tikplatform.com/pages/privacidad.html" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+  <header class="bg-white border-b">
+    <div class="max-w-5xl mx-auto px-4 py-6 flex flex-wrap items-center justify-between gap-3">
+      <a href="../index.html" class="font-black text-xl">TikPlatform</a>
+
+      <nav class="text-sm text-gray-600 flex flex-wrap gap-4 items-center">
+        <a href="../blog/index.html" class="hover:text-black" data-ui="navBlog">Blog</a>
+        <a href="faq.html" class="hover:text-black" data-ui="navFaq">FAQ</a>
+        <a href="terminos.html" class="hover:text-black" data-ui="navTerms">Términos</a>
+        <a href="aviso-legal.html" class="hover:text-black" data-ui="navLegal">Aviso legal</a>
+        <a href="contacto.html" class="hover:text-black" data-ui="navContact">Contacto</a>
+
+        <div class="flex items-center gap-2 ml-2">
+          <span class="text-xs text-gray-500" data-ui="langLabel">Idioma</span>
+          <select id="langSelect" class="text-sm border rounded-lg px-2 py-1 bg-white">
+            <option value="es">ES</option>
+            <option value="en">EN</option>
+            <option value="pt">PT</option>
+            <option value="fr">FR</option>
+          </select>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-10">
+    <h1 class="text-3xl font-black mb-4" data-p="title">Política de Privacidad</h1>
+
+    <section class="bg-white p-6 rounded-2xl shadow-sm border space-y-4">
+      <p class="text-sm text-gray-700" data-p="intro"></p>
+
+      <h2 class="text-xl font-bold mt-2" data-p="s1"></h2>
+      <p class="text-sm text-gray-700" data-p="s1p"></p>
+
+      <h2 class="text-xl font-bold mt-2" data-p="s2"></h2>
+      <p class="text-sm text-gray-700" data-p="s2p"></p>
+
+      <h2 class="text-xl font-bold mt-2" data-p="s3"></h2>
+      <p class="text-sm text-gray-700" data-p="s3p"></p>
+
+      <h2 class="text-xl font-bold mt-2" data-p="s4"></h2>
+      <p class="text-sm text-gray-700" data-p="s4p"></p>
+
+      <h2 class="text-xl font-bold mt-2" data-p="s5"></h2>
+      <p class="text-sm text-gray-700" data-p="s5p"></p>
+
+      <p class="text-xs text-gray-500 mt-6">
+        <span data-ui="updated">Última actualización</span>: <strong>2026-02-28</strong>
+      </p>
+    </section>
+  </main>
+
+  <footer class="py-8 text-center text-xs text-gray-500">
+    <a href="../index.html" class="underline" data-ui="back">Volver al inicio</a>
+  </footer>
+
+  <script src="../assets/js/legal-i18n.js"></script>
+  <script>
+    const lang = TP_LEGAL.getParamLang();
+    TP_LEGAL.applyBaseUI(lang);
+    TP_LEGAL.applyPageText("privacidad", lang);
+
+    document.getElementById("langSelect").addEventListener("change", (e) => {
+      TP_LEGAL.setLang(e.target.value, "privacidad");
+    });
+  </script>
+</body>
+</html>
